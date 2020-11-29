@@ -1,16 +1,19 @@
 import React from 'react';
 import './Header.css';
+import {Link} from 'react-router-dom';
 
-const Header = () => {
+const Header = ({nom}) => {
   return (
       <header>
         <div className="row">
-          <div className="col-md-9 col-sm-9 col-xs-9">
-            <h1 id="nomheader"> Dashboard </h1>
+          <div className="col-md-7 col-sm-7 col-xs-7">
+            <h1 id="nomheader"> {nom} </h1>
           </div>
-          <div className="col-md-3 col-sm-3 col-xs-3">
-              <button> Widgets </button>
-              <button> Formulaire </button>
+          <div className="col-md-5 col-sm-5 col-xs-5">
+            <nav>
+              <Link to="/" className="btt1"><button> Widgets </button></Link>
+              <Link to="/Form" className="btt2"><button> Formulaire </button></Link>
+            </nav>
           </div>
         </div>
       </header>
