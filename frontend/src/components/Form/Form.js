@@ -26,30 +26,9 @@ class Form extends React.Component {
             			<Formcal />
           			</div>
         		</div>
-        		<div className="row">
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<FormTodo />
-          			</div>
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<Formbudget />
-          			</div>
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<Formcal />
-          			</div>
-        		</div>
-        		<div className="row">
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<FormTodo />
-          			</div>
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<Formbudget />
-          			</div>
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<Formcal />
-          			</div>
-        		</div>
-        	</main>
-    	</div>
+        	
+      </main>
+    </div>
 			
 		)
 	}
