@@ -6,7 +6,7 @@ class Formtodo extends React.Component {
 	render() {
     return (
       <div className="formtodo">
-        <h2>✓ Todo list</h2>
+        <h2 id="titre">✓ Todo list</h2>
         	<div className="ensemble">
               <input className="dot" type="text" name="name" placeholder="Ajouter une tâche" />
 
