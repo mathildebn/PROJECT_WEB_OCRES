@@ -1,13 +1,24 @@
-.song1, .song2, .song3, .song4, .song5 {
+.music{
+	background-color: white;
+  padding: 5px;
+  max-width: 100%;
+  justify-content: flex-end;
+  border-radius: 15px;
+  margin: auto;
+  box-shadow: 0 3px 6px grey;
+}
+
+.song1, .song2, .song3, .song4, .song5, .song6 {
 	font-size: 20px;
-	margin-left: 100px;
+	margin-left: 10px;
 }
 
-.artist1, .artist2, .artist3, .artist4, .artist5 {
+.artist1, .artist2, .artist3, .artist4, .artist5, .artist6 {
 	font-size: 13px;
+	margin-bottom: 17.5px;
 }
 
-h3{
+h2{
 	text-align: center;
 }
 

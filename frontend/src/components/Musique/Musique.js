@@ -16,16 +16,19 @@ class Musique extends React.Component{
       	song3 : null,
       	song4 : null,
       	song5 : null,
+        song6 : null,
       	artist1 : null,
       	artist2 : null,
       	artist3 : null,
       	artist4 : null,
       	artist5 : null,
+        artist6 : null,
       	cover1 : null,
       	cover2 : null,
       	cover3 : null,
       	cover4 : null,
-      	cover5 : null
+      	cover5 : null,
+        cover6 : null
       };
    }
 
@@ -40,6 +43,7 @@ class Musique extends React.Component{
 			const song3 = data.tracks.data[2].title;
 			const song4 = data.tracks.data[3].title;
 			const song5 = data.tracks.data[4].title;
+      const song6 = data.tracks.data[5].title;
 
 			//Récupérer les 5 premiers artistes correspondants du toptracks
 			const artist1 = data.tracks.data[0].artist.name;
@@ -47,6 +51,7 @@ class Musique extends React.Component{
 			const artist3 = data.tracks.data[2].artist.name;
 			const artist4 = data.tracks.data[3].artist.name;
 			const artist5 = data.tracks.data[4].artist.name;
+      const artist6 = data.tracks.data[5].artist.name;
 
 			//Récupérer les covers des chansons
 			const cover1 = data.tracks.data[0].album.cover_small;
@@ -54,8 +59,9 @@ class Musique extends React.Component{
 			const cover3 = data.tracks.data[2].album.cover_small;
 			const cover4 = data.tracks.data[3].album.cover_small;
 			const cover5 = data.tracks.data[4].album.cover_small;
+      const cover6 = data.tracks.data[5].album.cover_small;
 
-        	this.setState({song1,song2,song3,song4,song5,artist1,artist2,artist3,artist4,artist5,cover1,cover2,cover3,cover4,cover5});
+        	this.setState({song1,song2,song3,song4,song5,song6,artist1,artist2,artist3,artist4,artist5,artist6,cover1,cover2,cover3,cover4,cover5,cover6});
         	
         	console.log(song1, artist1);
 
@@ -79,11 +85,11 @@ class Musique extends React.Component{
   }
 
    render(){
-   	const { song1,song2,song3,song4,song5,artist1,artist2,artist3,artist4,artist5,cover1,cover2,cover3,cover4,cover5 } = this.state;
+   	const { song1,song2,song3,song4,song5,song6,artist1,artist2,artist3,artist4,artist5,artist6,cover1,cover2,cover3,cover4,cover5,cover6 } = this.state;
     const { title } = this.props;
    	return(
    		<div className ="music">
-   			<h3><img src={Music} className="icone" alt="iconemusic"/>Musique</h3>
+   			<h2 style={{marginBottom : '50px'}}><img src={Music} className="icone" alt="iconemusic"/>Musique</h2>
    		<div className="chansons">
    			<div className="song1">
    			  <img src={cover1} alt="cover1"/>
@@ -124,6 +130,14 @@ class Musique extends React.Component{
    					{artist5}
    				</div>
    			</div>
+
+        <div className="song6">
+        <img src={cover6} alt="cover6"/>
+          {song6}
+          <div className="artist6">
+            {artist6}
+          </div>
+        </div>
    		</div>
    		</div>
    	)
