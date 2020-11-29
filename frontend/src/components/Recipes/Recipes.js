@@ -22,7 +22,7 @@ const Recipes = () => {
         <div className="recipes">
           <h2>Recipes</h2>
           {recipes.slice(0, 3).map(recipe => (
-                <div style ={{textAlign: "left"}}>
+                <div id="recette" style ={{textAlign: "left"}}>
                   <br></br>
                   <img src={recipe.recipe.image} style={{width: "5vw", borderRadius: 10, marginRight: '20px'}}/>
                   <a style ={{fontSize: 15}} href={recipe.recipe.url}>{recipe.recipe.label}</a>

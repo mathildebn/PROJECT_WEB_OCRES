@@ -15,7 +15,8 @@
   border-radius: 15px;
   margin: auto;
   box-shadow: 0 3px 6px grey;
-  margin-right: 20px;
+  margin-top: 70px; 
+  margin-left: 50px; 
 }
 
  
@@ -38,4 +39,8 @@ a:hover {
 
 a:visited {
   color: blueviolet;
+}
+
+#recette{
+    margin-top: -20px;
 }
