@@ -1,0 +1,19 @@
+main{
+	padding:50px;
+}
+
+.container-fluid{
+	height : 100%;
+	background: rgba(179, 182, 255, 0.41);
+}
+
+#budget{
+	margin-top: 80px;
+}
+
+#actus{
+	margin-top: 50px;
+}
+
+
+
