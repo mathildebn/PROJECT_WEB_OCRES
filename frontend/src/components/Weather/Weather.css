@@ -16,7 +16,7 @@ body {
 .app {
   height: 90%;
   width: 100%;
-
+  margin-top: 20px;
   background-image: url('./image/partly_sunny2.png');
   background-size: cover;
   border-radius: 50px;
