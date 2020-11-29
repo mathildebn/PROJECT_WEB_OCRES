@@ -54,6 +54,10 @@ class Horloge extends React.Component {
 		this.timer = setInterval(()=>this.clock(),1000);
 	}
 
+	componentWillUnmount() {
+    	clearInterval(this.timer);
+  	}
+
 	clock(){
 
 		const deg = 6;
