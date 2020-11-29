@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.news {
+  background-color: white;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  max-width: 90%;
+  min-width: 50%;
+  justify-content: space-around;
+  border-radius: 15px;
+  margin: auto;
+  box-shadow: 0 3px 6px grey;
+}
+
+.actu{
+  margin-left: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: blueviolet;
+  transition: 500ms;
+}
+
+a:visited {
+  color: blueviolet;
+}

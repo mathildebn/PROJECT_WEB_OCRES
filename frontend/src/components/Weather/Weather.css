@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+ 
+
+body {
+  font-family: 'montseratt', sans-serif;
+}
+
+ 
+
+.app {
+  height: 90%;
+  width: 100%;
+
+  background-image: url('./image/partly_sunny2.png');
+  background-size: cover;
+  border-radius: 50px;
+  filter : drop-shadow(0 3px 6px grey);
+}
+
+ 
+
+.app.warm {
+  background-image: url('./image/rainy.png');
+}
+
+ 
+
+.search {
+  padding: 50px;
+}
+
+ 
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+ 
+
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+ 
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+ 
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: -25px;
+
+ 
+
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  
+  color: #313131;
+  font-size: 20px;
+
+ 
+
+  transition: 0.4s ease;
+}
+
+ 
+
+.search-box .search-bar:focus {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+ 
+
+.location-box .location {
+  color: #FFF;
+  font-size: 300%;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 70%;
+}
+
+ 
+
+.weather-box {
+  text-align: center;
+}
+
+ 
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20%;
+}
+
+ 
+
+.weather-box .main {
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 20%;
+}
