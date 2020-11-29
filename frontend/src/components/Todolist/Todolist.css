@@ -1,0 +1,26 @@
+.todo{
+	 
+	background-color: white;
+	max-width :315px;
+  	border-radius: 15px;
+	box-shadow: 0 3px 6px grey;
+	margin-left: 20px;
+}
+
+.checkbox{
+
+	display: flex;
+	justify-content: space-between;
+}
+
+#boite{
+	margin-right: 10px;
+	width: 0.9em;
+  	height: 0.9em;
+ 	border-radius: 2em;
+ 	border-top-color: red 1px;
+}
+
+#tache{
+	margin-left: 20px;
+}
