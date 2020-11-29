@@ -10,9 +10,9 @@
 .dob{
 	
 	display: block;
-	margin-left: 25%;
-	margin-top: 20px;
+	margin: auto;
   	padding: 15px;
+  	margin-top: 20px;
 
  	width : 50%;
  	height : 20%;
@@ -25,7 +25,7 @@
   	border-radius: 12px;
   
   	color: #313131;
-  	font-size: 18px;
+  	font-size: 1.5vw;
     transition: 0.4s ease;
 }
 
@@ -34,5 +34,10 @@
 }
 
 .ajout{
-	margin-left: 38%;
+	display: block;
+	margin: center;
+}
+
+#titre{
+	font-size: 3vw;
 }
