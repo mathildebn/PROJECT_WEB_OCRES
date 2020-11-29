@@ -6,7 +6,7 @@ class Formcal extends React.Component {
 	render() {
     return (
       <div className="formcal">
-        <h2>Calendrier</h2>
+        <h2 id="titre">Calendrier</h2>
         	<div className="ensemble">
               <input className="doc" type="text" name="name" placeholder="Nom évènement" />
               <label className="label">Jour de début</label>

@@ -4,14 +4,13 @@
 	height: 100%;
 	border-radius: 15px;
 	box-shadow: 0 3px 6px grey;
-	margin-top: 10%;
+	margin-top: 8%;
 }
 
 .doc{
 	
 	display: block;
-	margin-left: 25%;
-	margin-bottom: 20px;
+	margin: auto;
   	padding: 15px;
 
  	width : 50%;
@@ -25,7 +24,7 @@
   	border-radius: 12px;
   
   	color: #313131;
-  	font-size: 18px;
+  	font-size: 1.5vw;
     transition: 0.4s ease;
 }
 
@@ -34,9 +33,15 @@
 }
 
 .ajout{
-	margin-left: 40%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
 }
 
 .label{
 	margin-left: 35%;
+}
+
+#titre{
+	font-size: 3vw;
 }
