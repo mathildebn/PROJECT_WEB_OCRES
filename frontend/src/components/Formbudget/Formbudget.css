@@ -36,6 +36,12 @@
 .ajout{
 	display: block;
 	margin: center;
+	margin-bottom: 10%;
+}
+
+.labelSupp2{
+	font-size: 1.5vw;
+	margin-left: 33%;
 }
 
 #titre{

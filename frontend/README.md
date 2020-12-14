@@ -16,8 +16,8 @@ Nous avons décidé de créer un dashboard servant au quotidien pour s'aider à 
 	- Latest News : il est important de connaître l'actualité du monde.
 	- Méteo : vérifier le temps afin de nous habiller comme il se doit.
 	- Musique : être au courant des toptracks du moment.
-	- Dépenses par mois : avoir une vue d'ensemble sur nos dépenses au cours des 6 derniers mois.
-	- Dépenses du mois : nos dépenses sont classées par catégorie sur le mois courant.
+	- Dépenses par mois : avoir une vue d'ensemble sur nos dépenses au cours des 6 premiers mois.
+	- Dépenses du mois : nos dépenses sont classés par catégories sur le mois courant.
 	- Recettes : des idées de recettes à tester chez nous.
 
 Pour lancer le projet, il faut avoir installé plusieurs librairies :
@@ -27,6 +27,7 @@ Pour lancer le projet, il faut avoir installé plusieurs librairies :
 - recharts
 - react-calendar
 - react-router et react-router-dom
+- react-big-calendar
 
 Nous avons documenté tous nos composants et widgets dans Storybook.
 
@@ -49,8 +50,6 @@ Nous avons documenté tous nos composants et widgets dans Storybook.
 
 	npm ERR! A complete log of this run can be found in:
 	npm ERR! C:\Users\mathi\AppData\Roaming\npm-cache\_logs\2020-11-29T19_00_02_768Z-debug.log
-
-- Nous avons eu quelques soucis pour rendre notre dashboard responsive. Nous avons su régler les problèmes majeurs, cependant, quelques failles demeurent.
 
 #Lien Trello : https://trello.com/b/IX2QIwDk/front
 

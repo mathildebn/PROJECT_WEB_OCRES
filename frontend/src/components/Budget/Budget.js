@@ -1,7 +1,9 @@
 import React from 'react';
 import {PieChart, Pie, Cell,Legend, Bar, ResponsiveContainer} from 'recharts';
+import Formbudget from './../Formbudget/Formbudget';
 import './Budget.css';
-  
+import axios from 'axios';
+
   const data = [
       { name: 'Courses', value: 400 },
       { name: 'Frais maison', value: 300 },
@@ -14,11 +16,47 @@ import './Budget.css';
 class Budget extends React.Component {
       static jsfiddleUrl = 'https://jsfiddle.net/alidingling/3Leoa7f4/';
       static jsfiddleUrl = 'https://jsfiddle.net/alidingling/30763kr7/';
-      
+
+      constructor(props){
+        super(props);
+        this.state = {
+          name : "",
+          value : "",
+          depenses : []
+        }
+      }
+
+      componentDidMount = () => {
+        this.getBudget();
+      };
+
+      getBudget = () => {
+        axios.get('http://localhost:3001/budget')
+        .then((response) => {
+          const data = response.data;
+          this.setState({depenses:data});
+          console.log("data reçue");
+          console.log(data);
+        })
+        .catch(() => {
+          console.log("erreur");
+        });
+      };
+
+      displayBudget = (depenses) => {
+        if (!depenses.length) return null;
+
+        return depenses.map((depense,index) => (
+          <div key={index}>
+            <p>{depense.name}</p>
+            <p>{depense.value}</p>
+          </div>
+        ));
+      };
     
       render() {
         return (
-        <ResponsiveContainer>
+        <ResponsiveContainer width="100%" height="100%">
         <div className="pie">
           <PieChart width={280} height={280}>
             <Pie
@@ -40,8 +78,13 @@ class Budget extends React.Component {
             <Bar dataKey="uv" fill="#82ca9d" />
            
           </PieChart>
+
+        <div>
+          {this.displayBudget(this.state.depenses)}
+        </div>
         </div>
         </ResponsiveContainer>
+        
         );
       }
     }

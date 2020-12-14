@@ -1,7 +1,6 @@
 import React from 'react';
 import Horloge from './../Horloge';
 import Header from './../Header';
-import FormTodo from './../Formtodo/Formtodo';
 import Formbudget from './../Formbudget/Formbudget';
 import Formcal from './../Formcal/Formcal';
 
@@ -16,13 +15,10 @@ class Form extends React.Component {
 			</div>
 			<main>
      			<div className="row">
-          			<div className="col-md-4 col-sm-4 col-xs-4">
-            			<FormTodo />
-          			</div>
-          			<div className="col-md-4 col-sm-4 col-xs-4">
+          			<div className="col-md-6 col-sm-6 col-xs-6">
             			<Formbudget />
           			</div>
-          			<div className="col-md-4 col-sm-4 col-xs-4">
+          			<div className="col-md-6 col-sm-6 col-xs-6">
             			<Formcal />
           			</div>
         		</div>

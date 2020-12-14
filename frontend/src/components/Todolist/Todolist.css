@@ -1,26 +1,53 @@
-.todo{
-	 
-	background-color: white;
-	width :315px;
-  	border-radius: 15px;
-	box-shadow: 0 3px 6px grey;
-	margin-left: 45px;
+.formtodo{
+    background-color: white;  
+    width: 315px;
+ 
+    border-radius: 15px;
+    box-shadow: 0 3px 6px grey;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+ 
+.dot{
+    
+    display: block;
+ 
+      padding: 15px;
+      margin-left: 49px;
+    
+ 
+      width : 220px;
+      
+      height : 20%;
+ 
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    background-color: #ededed;
+    border-radius: 12px;
+  
+    color: #313131;
+    font-size: 1.5vw;
+    transition: 0.4s ease;
+    margin-bottom: 5%;
+}
+ 
+.dot:focus {
+  background-color: rgba(179, 182, 255, 0.41);
+}
+ 
+.ajout{
+ 
+    font-size: 1.3vw;
+    margin-bottom: 5%;
+}
+ 
+#titre{
+    font-size: 2.5vw;
+ 
 }
 
-.checkbox{
-
-	display: flex;
-	justify-content: space-between;
-}
-
-#boite{
-	margin-right: 10px;
-	width: 0.9em;
-  	height: 0.9em;
- 	border-radius: 2em;
- 	border-top-color: red 1px;
-}
-
-#tache{
-	margin-left: 20px;
+.affichage{
+  margin-left: 10%;
 }

@@ -1,62 +1,149 @@
-import React, { Component } from 'react';
-import Checkbox from './Checkbox';
+import React, { useState } from 'react';
 import './Todolist.css';
+import axios from "axios";
 
-    const items = [
-  'Manger',
-  'Dormir',
-  'Travailler',
-  'Prendre rdv médecin',
-  'Courses de noël'
-    ];
+class Todolist extends React.Component {
 
-class Todolist extends Component {
-  //création d'un set
-  componentWillMount = () => {
-    this.selectedCheckboxes = new Set();
-  }
-
-  //fonction qui est appelée lorsque l'utilisateur check ou uncheck une checkbox
-  // label correspond à la checkbox concernée
-  toggleCheckbox = label => {
-
-    //si le set checkbox a un label (item) spécifique
-    //alors on le supprime du set
-    //sinon on le rajoute
-    if (this.selectedCheckboxes.has(label)) {
-      this.selectedCheckboxes.delete(label);
-    } else {
-      this.selectedCheckboxes.add(label);
+    constructor(props){
+      super(props);
+        this.state = {
+          task : "",
+          listes : []
+        }
     }
-  }
+
+      componentDidMount = () => {
+        this.getTask();
+      };
 
 
-  //création des checkboxs pour chaque item
-  createCheckbox = label => (
-    <Checkbox
-      label={label}
-      //check ou uncheck de la checkbox
-      handleCheckboxChange={this.toggleCheckbox}
-      key={label}
-    />
-  )
+      getTask = () => {
+        axios.get('http://localhost:3001/todo')
+        .then((response) => {
+          const data = response.data;
+          this.setState({listes:data});
+          console.log("RECEPTION");
+          console.log(data);
+        })
+        .catch(() => {
+          console.log("erreur");
+        });
+      };
 
-  createCheckboxes = () => (
-    items.map(this.createCheckbox)
-  )
+      handleChange = ({target}) => {
+      const {name, value} = target;
+
+      this.setState({
+        [name] : value
+      });
+    };
+
+    handleAdd= (event) => {
+      /*event.preventDefault();
+      const newNote = {
+        task: task
+      }
+    axios.post('http://localhost:3001/todo', newNote)
+    console.log(newNote);*/
+      event.preventDefault();
+
+      const todo = {
+        task : this.state.task
+      };
+
+      axios({
+        url : 'http://localhost:3001/todo',
+        method: 'POST',
+        data : todo
+      })
+      .then(() => {
+      alert(todo.task + " ajouté !")
+      })
+      .catch(()=> {
+        console.log("Erreur");
+      });
+    
+    }
+
+    handleDel= (event) => {
+      event.preventDefault();
+
+      const todo = {
+        task : this.state.task2,
+      };
+
+      axios({
+        url : `http://localhost:3001/todo/${todo.task}`,
+        method: 'DELETE',
+        data : todo
+      })
+      .then(() => {
+      alert(todo.task + " supprimé !")
+      })
+      .catch(()=> {
+        console.log("Erreur");
+      });
+    
+    }
+
+    handleMaj= (event) => {
+      event.preventDefault();
+
+      const modif = {
+        task : this.state.task3,
+        task_maj : this.state.task4,
+      };
+
+      axios({
+        url : `http://localhost:3001/todo/${modif.task}`,
+        method: 'PUT',
+        data : {task : modif.task_maj}
+      })
+      .then(() => {
+      alert(modif.task + " modifié en " + modif.task_maj)
+      })
+      .catch(()=> {
+        console.log("Erreur");
+      });
+    
+    }
+
+      displayTodo = (listes) => {
+        if (!listes.length) return null;
+
+        return listes.map((liste,index) => (
+          <div key={index}>
+            <li>{liste.task}</li>
+          </div>
+        ));
+      };
+ 
 
   render() {
     return (
-      <div className="todo">
-        <h2>✓ Todo list</h2>
-            <form id="tache">
-              {this.createCheckboxes()}
-            </form>
-
+      <div className="formtodo">
+        <h2 id="titre">✓ Todo list</h2>
+          <form className="ensemble" onSubmit={this.handleAdd}>
+              <input onChange = {this.handleChange} className="dot" type="text" name="task" value={this.state.task} placeholder="Ajouter une tâche" />
+              <button className="ajout" type="submit">Ajouter</button>
+          </form>
+          <div className="affichage">
+            {this.displayTodo(this.state.listes)}
           </div>
 
-    );
-  }
-}
+          <form onSubmit={this.handleDel}>
+            <input onChange = {this.handleChange} className="dot" type="text" name="task2" value={this.state.task2} placeholder="Supprimer une tâche" />
+            <button className="ajout" style={{backgroundColor : "#B50607"}} type="submit">Supprimer</button>
+          </form>
 
+          <form onSubmit={this.handleMaj}>
+            <input onChange = {this.handleChange} className="dot" type="text" name="task3" value={this.state.task3} placeholder="Tâche à modifier" />
+            <input onChange = {this.handleChange} className="dot" type="text" name="task4" value={this.state.task4} placeholder="Modifications apportées" />            
+            <button className="ajout" style={{backgroundColor : "#bd7924"}} type="submit">Modifier</button>
+          </form>
+      </div>
+    );
+   }
+}
+ 
 export default Todolist;
