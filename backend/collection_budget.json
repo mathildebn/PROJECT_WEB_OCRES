@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5fd65ce45e18ff3c99954368"
+  },
+  "name": "Anniversaire",
+  "value": "50",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fd6b2c6aab4774371744872"
+  },
+  "name": "Goutéro",
+  "value": "100",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fd6b3aaaab4774371744873"
+  },
+  "name": "Vacances",
+  "value": "200",
+  "__v": 0
+}]
